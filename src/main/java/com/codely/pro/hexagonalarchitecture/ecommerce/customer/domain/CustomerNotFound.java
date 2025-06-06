@@ -1,9 +1,11 @@
 package com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain;
 
-public class CustomerNotFound extends RuntimeException {
+import com.codely.pro.hexagonalarchitecture.shared.domain.DomainError;
+
+public class CustomerNotFound extends DomainError {
 
     public CustomerNotFound() {
-        super("Customer not found");
+        super("404", " Cliente no encontrado");
     }
 
 }

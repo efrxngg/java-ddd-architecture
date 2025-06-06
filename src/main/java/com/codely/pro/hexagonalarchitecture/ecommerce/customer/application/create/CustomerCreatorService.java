@@ -15,7 +15,6 @@ public class CustomerCreatorService implements CustomerCreator {
     private final CustomerRepository repository;
     private final EventBus eventBus;
 
-    @Override
     public void create(CustomerId id, CustomerName name) {
         Customer customer = Customer.create(id, name);
         repository.save(customer);

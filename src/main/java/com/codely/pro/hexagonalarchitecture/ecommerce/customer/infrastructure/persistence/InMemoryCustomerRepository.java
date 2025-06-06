@@ -22,7 +22,7 @@ public class InMemoryCustomerRepository implements CustomerRepository {
     @Override
     public Optional<Customer> findById(Integer id) {
         return customers.stream()
-                .filter(customer -> customer.getId().equals(id))
+                .filter(customer -> customer.getId().value().equals(id))
                 .findFirst();
     }
 }

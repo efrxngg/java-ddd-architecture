@@ -1,4 +1,4 @@
-package com.codely.pro.hexagonalarchitecture.shared.value_object;
+package com.codely.pro.hexagonalarchitecture.shared.domain.value_object;
 
 public abstract class IntValueObject {
     private final Integer value;

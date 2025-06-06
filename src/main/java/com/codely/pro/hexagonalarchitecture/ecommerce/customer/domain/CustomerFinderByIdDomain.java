@@ -7,7 +7,9 @@ public class CustomerFinderByIdDomain {
         this.repository = repository;
     }
 
-    public Customer find(Integer id) {
-        return repository.findById(id).orElseThrow(CustomerNotFound::new);
+    public Customer find(CustomerId id) {
+        return repository
+                .findById(id.value())
+                .orElseThrow(CustomerNotFound::new);
     }
 }

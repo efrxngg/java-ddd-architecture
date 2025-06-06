@@ -3,5 +3,5 @@ package com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain;
 import com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain.Customer;
 
 public interface CustomerFinderById {
-    Customer find(Integer id);
+    Customer find(CustomerId id);
 }

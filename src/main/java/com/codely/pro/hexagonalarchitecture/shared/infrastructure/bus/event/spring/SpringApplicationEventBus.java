@@ -1,4 +1,4 @@
-package com.codely.pro.hexagonalarchitecture.shared.infrastructure.spring;
+package com.codely.pro.hexagonalarchitecture.shared.infrastructure.bus.event.spring;
 
 import com.codely.pro.hexagonalarchitecture.shared.domain.bus.event.DomainEvent;
 import com.codely.pro.hexagonalarchitecture.shared.domain.bus.event.EventBus;

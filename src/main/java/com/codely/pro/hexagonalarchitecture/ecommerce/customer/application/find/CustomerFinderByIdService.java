@@ -3,6 +3,7 @@ package com.codely.pro.hexagonalarchitecture.ecommerce.customer.application.find
 import com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain.Customer;
 import com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain.CustomerFinderById;
 import com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain.CustomerFinderByIdDomain;
+import com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain.CustomerId;
 import com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain.CustomerRepository;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class CustomerFinderByIdService implements CustomerFinderById {
     }
 
     @Override
-    public Customer find(Integer id) {
+    public Customer find(CustomerId id) {
         return finder.find(id);
     }
 
