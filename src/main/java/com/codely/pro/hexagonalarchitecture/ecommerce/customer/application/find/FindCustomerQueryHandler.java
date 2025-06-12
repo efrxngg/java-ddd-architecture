@@ -8,6 +8,8 @@ import com.codely.pro.hexagonalarchitecture.shared.domain.bus.query.QueryHandler
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class FindCustomerQueryHandler implements QueryHandler<FindCustomerQuery, CustomerResponse> {
@@ -16,7 +18,7 @@ public class FindCustomerQueryHandler implements QueryHandler<FindCustomerQuery,
 
     @Override
     public CustomerResponse handle(FindCustomerQuery query) throws QueryHandlerExecutionError {
-        Customer customer = finder.find(new CustomerId(query.id()));
+        Customer customer = finder.find(new CustomerId(UUID.fromString(query.id())));
 
         return CustomerResponse.fromAgregate(customer);
     }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.LinkedHashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.UUID;
 
 @Repository
 public class InMemoryCustomerRepository implements CustomerRepository {
@@ -20,7 +21,7 @@ public class InMemoryCustomerRepository implements CustomerRepository {
     }
 
     @Override
-    public Optional<Customer> findById(Integer id) {
+    public Optional<Customer> findById(UUID id) {
         return customers.stream()
                 .filter(customer -> customer.getId().value().equals(id))
                 .findFirst();

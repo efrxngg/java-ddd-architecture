@@ -4,12 +4,13 @@ import com.codely.pro.hexagonalarchitecture.shared.domain.bus.event.DomainEvent;
 
 import java.io.Serializable;
 import java.util.Map;
+import java.util.UUID;
 
 public class CustomerCreationDomainEvent extends DomainEvent {
-    private final Integer id;
+    private final UUID id;
     private final String name;
 
-    public CustomerCreationDomainEvent(String agregateId, Integer id, String name, String eventId, String ocurrendOn) {
+    public CustomerCreationDomainEvent(String agregateId, UUID id, String name, String eventId, String ocurrendOn) {
         super(agregateId, null, null);
         this.id = id;
         this.name = name;
@@ -20,7 +21,7 @@ public class CustomerCreationDomainEvent extends DomainEvent {
 
         return new CustomerCreationDomainEvent(
                 agregateId,
-                Integer.valueOf((String) body.get("id")) ,
+                UUID.fromString((String) body.get("id")) ,
                 (String) body.get("name"),
                 eventId,
                 ocurrendOn);
@@ -39,7 +40,7 @@ public class CustomerCreationDomainEvent extends DomainEvent {
         );
     }
 
-    public Integer id() {
+    public UUID id() {
         return id;
     }
 

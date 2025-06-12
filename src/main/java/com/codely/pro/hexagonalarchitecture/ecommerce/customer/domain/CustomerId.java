@@ -1,9 +1,11 @@
 package com.codely.pro.hexagonalarchitecture.ecommerce.customer.domain;
 
-import com.codely.pro.hexagonalarchitecture.shared.domain.value_object.IntValueObject;
+import com.codely.pro.hexagonalarchitecture.shared.domain.value_object.UUIDValueObject;
 
-public final class CustomerId extends IntValueObject {
-    public CustomerId(Integer value) {
+import java.util.UUID;
+
+public final class CustomerId extends UUIDValueObject {
+    public CustomerId(UUID value) {
         super(value);
     }
 }

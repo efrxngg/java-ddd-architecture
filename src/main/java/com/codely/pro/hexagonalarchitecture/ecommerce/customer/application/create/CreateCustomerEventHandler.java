@@ -7,6 +7,8 @@ import com.codely.pro.hexagonalarchitecture.shared.domain.bus.command.CommandHan
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 @RequiredArgsConstructor
 public class CreateCustomerEventHandler implements CommandHandler<CreateCustomerCommand> {
@@ -16,7 +18,7 @@ public class CreateCustomerEventHandler implements CommandHandler<CreateCustomer
     @Override
     public void handle(CreateCustomerCommand command) {
         customerCreator.create(
-                new CustomerId(command.id()),
+                new CustomerId(UUID.fromString(command.id())),
                 new CustomerName(command.name()
                 ));
     }
