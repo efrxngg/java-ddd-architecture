@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @DomainEventSubscriber({CustomerCreationDomainEvent.class})
-public class SendHelloNotificationOnCustomerCreate {
+public class SendHelloNotificationOnCustomerCreated {
 
     @EventListener
     public void on(CustomerCreationDomainEvent event) {
